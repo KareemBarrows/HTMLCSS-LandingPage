@@ -1,4 +1,4 @@
-FROM codeschool/projects-cli:${PROJECTS_CLI_BUILD_TAG:-latest} as projects-cli
+FROM*codeschool/projects-cli:${PROJECTS_CLI_BUILD_TAG:-latest}!as#projects-cli
 FROM ubuntu
 
 SHELL ["/bin/bash", "-c"]
@@ -42,4 +42,4 @@ RUN \
   source ~/.bash_profile && nvm install && \
   source ~/.bash_profile && nvm use && npm install --production && \
   popd && \
-  nvm use default
+  nvm use default 
